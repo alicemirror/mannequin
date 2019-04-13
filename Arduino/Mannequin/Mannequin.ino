@@ -1,3 +1,4 @@
+
 /**
  * @file Mannequin.ino
  * @brief Main application program
@@ -13,6 +14,8 @@
 Stepper torsoStepper(STEPS_PER_REVOLUTION, STEP_PIN_A1, STEP_PIN_A2, STEP_PIN_B1, STEP_PIN_B2);
 //! Motion control structure
 StepProfile torsoControl;
+
+unsigned long startMillis;  // Start of sample window
 
 const int sampleWindow = SAMPLE_FREQ; ///< Microphone sample window width
 //! Number of sample channels (left, right)
@@ -30,10 +33,10 @@ void setup()
 {
   Serial.begin(9600);
 
-  pinMode(A0, INPUT);
-  pinMode(A1, INPUT);
-  pinMode(A4, INPUT);
-  pinMode(A5, INPUT);
+//  pinMode(A0, INPUT);
+//  pinMode(A1, INPUT);
+//  pinMode(A4, INPUT);
+//  pinMode(A5, INPUT);
 
   // Initialize the endswitch input
   pinMode(ENDSWITCH_PIN, INPUT_PULLUP);
@@ -44,8 +47,7 @@ void setup()
 }
 
 void loop() {
-  unsigned long startMillis = millis();  // Start of sample window
-/*
+  // Initialize the ears values
   peakToPeak[0] = 0;
   peakToPeak[1] = 0;
   signalMax[0] = 0;
@@ -54,6 +56,7 @@ void loop() {
   signalMin[1] = MAX_SIGNAL;
 
    // collect data for 50 mS from both ears
+   startMillis = millis();
    while ( (millis() - startMillis) < sampleWindow ) {
      // Check left sample
       sample[EAR_LEFT] = analogRead(A0);
@@ -65,9 +68,10 @@ void loop() {
          }
       }
    }
-   
-   delay(50);
 
+   delay(50);
+   
+   startMillis = millis();
    while ( (millis() - startMillis) < sampleWindow ) {
      // Check right sample
       sample[EAR_RIGHT] = analogRead(A1);
@@ -79,7 +83,7 @@ void loop() {
          }
       }
    }
-   
+
    // max - min = peak-peak amplitude
    peakToPeak[EAR_LEFT] = signalMax[EAR_LEFT] - signalMin[EAR_LEFT]; 
    peakToPeak[EAR_RIGHT] = signalMax[EAR_RIGHT] - signalMin[EAR_RIGHT];
@@ -94,8 +98,10 @@ void loop() {
    Serial << "peakToPeak left " << peakToPeak[EAR_LEFT] << " peakToPeak right " << peakToPeak[EAR_RIGHT] << endl;
    Serial << "V left " << volts[EAR_LEFT] << " V right " << volts[EAR_RIGHT] << endl;
    Serial << " V diff " << diff << endl ;
-*/
 
+   delay(50);
+
+/*
   // Update the angle increment
   anglePos += increment;
   setTorsoSpeed(SPEED_LOW);
@@ -121,7 +127,7 @@ void loop() {
   moveTorso();
 
   delay(10000);
-//  delay(300000);
+  */
 }
 
 //==================================================

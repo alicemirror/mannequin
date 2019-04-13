@@ -26,11 +26,11 @@
 #define ANGLE_DEMULTIPLIER 12
 
 //! Stepper predefined speed
-#define SPEED_LOW 30    
+#define SPEED_LOW 25    
 //! Stepper predefined speed
-#define SPEED_MED 35
+#define SPEED_MED 30
 //! Stepper predefined speed
-#define SPEED_HIGH 45
+#define SPEED_HIGH 40
 //! Search zero stepper end point speed
 #define SPEED_ZERO 20
 
