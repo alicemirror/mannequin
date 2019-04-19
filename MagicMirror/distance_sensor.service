@@ -1,0 +1,19 @@
+# Definition of the Python3 script
+# distance_sensor as a service to run
+# automatically in background
+# This service definition file should be copied
+# in /lib/systemd/system
+# If for any reason the service is aborted, it is
+# restarted automatically
+
+[Unit]
+Description=Ultrasonic distance sensor
+After=multi-user.target
+ 
+[Service]
+Type=simple
+ExecStart=/home/pi/distance_sensor.py
+Restart=on-abort
+ 
+[Install]
+WantedBy=multi-user.target
