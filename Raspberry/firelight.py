@@ -1,5 +1,8 @@
-# Start PiFace Digital
-import time
+#!/usr/bin/python3
+# Executes a series of lighting sequences activated by cron
+
+# Import the external classes
+from pyclasses.pifacelights import PiFaceLights
 import pifacedigitalio as pfio
 from random import randint
 
@@ -9,108 +12,39 @@ ledRotations = 10
 ledMinRotations = 10
 ledMaxRotations = 30
 
-# PiFace Digital library initialization
-pfio.init()
-
-# Power on the fire Light. Remain on until the LED sequence
-# does not end
-def fireLight(isOn):
-    fireLightPin=0
+def main():
+    # Initialize the PiFace Digital 2 library
+    pfio.init()
+    # Initializa the class
+    piFace = PiFaceLights(pfio)
     
-    if isOn is True:
-        pfio.digital_write(fireLightPin, 1)
-    else:
-        pfio.digital_write(fireLightPin, 0)
+    piFace.fireLight(True)
+    piFace.clearLeds()
+    piFace.fibonacci()
+    piFace.clearLeds()
 
-# Power off al the LEDs
-def clearLeds():
-    for j in list(range(7)):
-        pfio.digital_write(j+1, 0)
+    # Loops on the seven LEDs
+    for j in list(range(ledRotations)):
+        piFace.rotateLeds(1)
 
-# Rotate the LEDs clockwise or counterclockwise
-# 'direction' can be 1 or -1
-def rotateLeds(direction):
-    # Seconds to pause every LED step
-    rotationPause=0.08
-    
-    # Initializes the starting point (depends on the direction)    
-    if(direction < 0):
-        startLed = 7
-    else:
-        startLed = 1
+    piFace.clearLeds()
 
-    # Loop on the seven LEDs
-    for j in list(range(7)):
-        pfio.digital_write(startLed, 1)
-        time.sleep(rotationPause)
-        pfio.digital_write(startLed, 0)
-        startLed += direction    
+    for j in list(range(ledRotations)):
+        piFace.rotateLeds(-1)
 
-# Executes the Fibonacci sequence up to 5
-# on the 7 LEDs (0, 1, 1, 2, 3, 5}
-# Note that the first pause is for 0 of the sequence
-def fibonacci():
-    pause = 0.025 # ms delay between every light sequence
+    piFace.clearLeds()
+    piFace.fibonacci()
+    piFace.clearLeds()
 
-    # 0
-    time.sleep(pause)
+    # Calculate the random number or double rotations
+    randRange = randint(ledMinRotations, ledMaxRotations)
 
-    # 1
-    pfio.digital_write(7, 1)
-    time.sleep(pause)
-    pfio.digital_write(7, 0)
-    time.sleep(pause)
+    for j in list(range(randRange)):
+        piFace.rotateLeds(1)
+        piFace.rotateLeds(-1)
 
-    # 1
-    pfio.digital_write(7, 1)
-    time.sleep(pause)
-    pfio.digital_write(7, 0)
-    time.sleep(pause)
+    piFace.clearLeds()
+    piFace.fireLight(False)
 
-    # 2
-    pfio.digital_write(6, 1)
-    time.sleep(pause)
-    pfio.digital_write(6, 0)
-    time.sleep(pause)
-
-    # 3
-    pfio.digital_write(5, 1)
-    time.sleep(pause)
-    pfio.digital_write(5, 0)
-    time.sleep(pause)
-
-    # 5
-    pfio.digital_write(3, 1)
-    time.sleep(pause)
-    pfio.digital_write(3, 0)
-    time.sleep(pause)
-
-# -------------------------- Main process
-fireLight(True)
-clearLeds()
-fibonacci()
-clearLeds()
-# Loops on the seven LEDs
-for j in list(range(ledRotations)):
-    rotateLeds(1)
-
-clearLeds()
-
-for j in list(range(ledRotations)):
-    rotateLeds(-1)
-
-clearLeds()
-fibonacci()
-clearLeds()
-
-# Calculate the random number or double rotations
-randRange = randint(ledMinRotations, ledMaxRotations)
-
-for j in list(range(randRange)):
-    rotateLeds(1)
-    rotateLeds(-1)
-
-clearLeds()
-fireLight(False)
-
-# -------------------------- END
+if __name__ == "__main__":
+    main()
