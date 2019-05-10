@@ -334,7 +334,7 @@ class AI:
         # a system shutdown
         if(speechTT == self.__SHUTDOWN_REQUEST):
             self.__speech("Self-destruction sequence activated. System will explode in five seconds.")
-            self.__runCmd([self.__EXPLODE])
+            # self.__runCmd([self.__EXPLODE])
             self.__shutdown()
         else:
             return speechTT
