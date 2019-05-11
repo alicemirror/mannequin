@@ -7,8 +7,8 @@ PREFIX="/home/pi/Sounds/Explosion"
 SUFFIX=".wav"
 
 # Phrases array
-SIZE=4
-SENTENCE=(04)
+SIZE=2
+SENTENCE=(04 04)
 
 # Chose a random sound from the set
 # Note that the modulos of the randome 

@@ -1,0 +1,630 @@
+[
+    {
+        "created_timestamp": "1557563969448",
+        "id": "1127131097769422853",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "Enrici answer"
+            },
+            "sender_id": "18448354",
+            "target": {
+                "recipient_id": "1124344744488968193"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557560429954",
+        "id": "1127116252055572484",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "Testing a direct message by hand (wrote with the browser app)"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "268278",
+            "target": {
+                "recipient_id": "1522538635"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419877221",
+        "id": "1126526731165237252",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "This is a test"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "16349533",
+            "target": {
+                "recipient_id": "18448354"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419746831",
+        "id": "1126526184269996036",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "This is a test"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "16349533",
+            "target": {
+                "recipient_id": "18448354"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419643622",
+        "id": "1126525751380123652",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "This is a test"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "16349533",
+            "target": {
+                "recipient_id": "18448354"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419496222",
+        "id": "1126525133139664902",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "This is a test"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "16349533",
+            "target": {
+                "recipient_id": "18448354"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419485239",
+        "id": "1126525087073566724",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "Hello"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "258901",
+            "target": {
+                "recipient_id": "18448354"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419453785",
+        "id": "1126524955146031108",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "This is a test"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "16349533",
+            "target": {
+                "recipient_id": "18448354"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419413390",
+        "id": "1126524785717018629",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "This is a test"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "16349533",
+            "target": {
+                "recipient_id": "18448354"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419405993",
+        "id": "1126524754691809284",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "Test received"
+            },
+            "sender_id": "18448354",
+            "target": {
+                "recipient_id": "1124344744488968193"
+            }
+        },
+        "type": "message_create"
+    }
+]
+[
+    {
+        "created_timestamp": "1557563969448",
+        "id": "1127131097769422853",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "Enrici answer"
+            },
+            "sender_id": "18448354",
+            "target": {
+                "recipient_id": "1124344744488968193"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557560429954",
+        "id": "1127116252055572484",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "Testing a direct message by hand (wrote with the browser app)"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "268278",
+            "target": {
+                "recipient_id": "1522538635"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419877221",
+        "id": "1126526731165237252",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "This is a test"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "16349533",
+            "target": {
+                "recipient_id": "18448354"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419746831",
+        "id": "1126526184269996036",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "This is a test"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "16349533",
+            "target": {
+                "recipient_id": "18448354"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419643622",
+        "id": "1126525751380123652",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "This is a test"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "16349533",
+            "target": {
+                "recipient_id": "18448354"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419496222",
+        "id": "1126525133139664902",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "This is a test"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "16349533",
+            "target": {
+                "recipient_id": "18448354"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419485239",
+        "id": "1126525087073566724",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "Hello"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "258901",
+            "target": {
+                "recipient_id": "18448354"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419453785",
+        "id": "1126524955146031108",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "This is a test"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "16349533",
+            "target": {
+                "recipient_id": "18448354"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419413390",
+        "id": "1126524785717018629",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "This is a test"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "16349533",
+            "target": {
+                "recipient_id": "18448354"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419405993",
+        "id": "1126524754691809284",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "Test received"
+            },
+            "sender_id": "18448354",
+            "target": {
+                "recipient_id": "1124344744488968193"
+            }
+        },
+        "type": "message_create"
+    }
+]
+[
+    {
+        "created_timestamp": "1557563969448",
+        "id": "1127131097769422853",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "Enrici answer"
+            },
+            "sender_id": "18448354",
+            "target": {
+                "recipient_id": "1124344744488968193"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557560429954",
+        "id": "1127116252055572484",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "Testing a direct message by hand (wrote with the browser app)"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "268278",
+            "target": {
+                "recipient_id": "1522538635"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419877221",
+        "id": "1126526731165237252",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "This is a test"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "16349533",
+            "target": {
+                "recipient_id": "18448354"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419746831",
+        "id": "1126526184269996036",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "This is a test"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "16349533",
+            "target": {
+                "recipient_id": "18448354"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419643622",
+        "id": "1126525751380123652",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "This is a test"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "16349533",
+            "target": {
+                "recipient_id": "18448354"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419496222",
+        "id": "1126525133139664902",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "This is a test"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "16349533",
+            "target": {
+                "recipient_id": "18448354"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419485239",
+        "id": "1126525087073566724",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "Hello"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "258901",
+            "target": {
+                "recipient_id": "18448354"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419453785",
+        "id": "1126524955146031108",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "This is a test"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "16349533",
+            "target": {
+                "recipient_id": "18448354"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419413390",
+        "id": "1126524785717018629",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "This is a test"
+            },
+            "sender_id": "1124344744488968193",
+            "source_app_id": "16349533",
+            "target": {
+                "recipient_id": "18448354"
+            }
+        },
+        "type": "message_create"
+    },
+    {
+        "created_timestamp": "1557419405993",
+        "id": "1126524754691809284",
+        "message_create": {
+            "message_data": {
+                "entities": {
+                    "hashtags": [],
+                    "symbols": [],
+                    "urls": [],
+                    "user_mentions": []
+                },
+                "text": "Test received"
+            },
+            "sender_id": "18448354",
+            "target": {
+                "recipient_id": "1124344744488968193"
+            }
+        },
+        "type": "message_create"
+    }
+]

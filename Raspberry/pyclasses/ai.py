@@ -1,5 +1,7 @@
 # AI and natural language processor classes
 # Including methods for speech to text and vice-versa
+# Update: Added a single sentence process to be used in Twitter DMs
+# Current version 1.0
 import random
 import re
 from collections import namedtuple
@@ -7,6 +9,7 @@ import subprocess
 import sys
 import json
 import time
+import paho.mqtt.publish as publish
 
 # ----------------------
 # Classes and methods
@@ -53,6 +56,10 @@ class AI:
     # Number of tries for someone speaking before playing
     # a random phrase
     __MAX_WAIT_FOR_SPEAK = 20
+    # Mosquitto server IP Address - Set this value accordingly
+    __MQTT_SERVER_IP = "192.168.0.241"
+    # Mosquitto server channel name
+    __MQTT_CHANNEL = "borg_access_termnal"
 
     # --- Dictionary keys
     __TTS_RESULTS = "results"
@@ -261,6 +268,17 @@ class AI:
 
         print(self.final())
 
+    # Process a Twitter DM text and return the response sentence to
+    # the caller
+    def processDM(self, dmText):
+            # Process the DM sentence
+            output = self.respond(dmText)
+            if output is None:
+                return "I can't understand. Explain"
+
+            # Return the response sentence
+            return output
+
     # Execute a subprocess command managing the return value, stdout, stderr
     # and the return code (0 or not 0 if error occurred)
     def __runCmd(self, cmd):
@@ -373,7 +391,7 @@ class AI:
             startDiscussion = self.__checkSpeak()
             
         # Say the initial sentence
-        self.__runCmd([self.__TTS[0], self.__TTS[1], self.initial()])
+        self.tts(self.initial())
 
         while sentences < self.__MAX_SENTENCES:
             sent = self.__getSTT()
@@ -384,10 +402,62 @@ class AI:
                 sentences = self.__MAX_SENTENCES
 
             # say a response and increment the sentences counter
-            self.__runCmd([self.__TTS[0], self.__TTS[1], output])
+            self.tts(output)
             sentences += 1
 
         # Exit block
         output = self.final()
-        self.__runCmd([self.__TTS[0], self.__TTS[1], output])
+        self.tts(output)
 
+
+    # Executes the textual sentence-response sending the result via
+    # MQTT to the server
+    def runSpeechRemote(self):
+        startDiscussion = False
+        sentences = 0
+        waitForSpeak = self.__MAX_WAIT_FOR_SPEAK
+                                       
+        while startDiscussion is not True:
+            if(waitForSpeak >= self.__MAX_WAIT_FOR_SPEAK):
+                # Play a speak request sentence
+                self.__runCmd([self.__ASK_FOR_SPEAK])
+                waitForSpeak = 0
+            else:
+                # Increment the counts
+                waitForSpeak += 1
+                
+            # Check if someone is speaking
+            startDiscussion = self.__checkSpeak()
+            
+        # Send the initial sentence
+        self.__sendMQTT(self.initial())
+
+        while sentences < self.__MAX_SENTENCES:
+            sent = self.__getSTT()
+
+            output = self.respond(sent)
+            if output is None:
+                # Force counter to exit
+                sentences = self.__MAX_SENTENCES
+
+            # Ssend a response and increment the sentences counter
+            self.__sendMQTT(output)
+            sentences += 1
+
+        # Exit block
+        self.__sendMQTT(output)
+
+    # Send the sentence output to a remote server via MQTT
+    # This command is used by the speech mechanism to dialogate
+    # with a second entity: the user speak to the Borg Access Terminal
+    # while the answers to the discussion are spoken by Seven of Nine
+    def __sendMQTT(self, text):
+        publish.single(self.__MQTT_CHANNEL, text, hostname=self.__MQTT_SERVER_IP)
+
+
+    # Text to speech method used by a remote MQTT client to speech
+    # processed response.
+    def tts(self, text):
+        self.__runCmd([self.__TTS[0], self.__TTS[1], text])
+
+        

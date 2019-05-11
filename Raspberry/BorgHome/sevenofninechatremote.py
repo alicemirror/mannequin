@@ -12,7 +12,7 @@ def main():
     # one minute of the daily hour available from
     # the speech_to_text services on Google APIs
     while True:
-        chat.runSpeech()
+        chat.runSpeechRemote()
 
 if __name__ == '__main__':
     main()
