@@ -4,7 +4,7 @@ import subprocess
 
 MQTT_SERVER = "localhost"
 MQTT_PATH = "magic_mirror"
-MIRROR_SERVER = "192.168.0.141"
+MIRROR_SERVER = "192.168.1.8"
  
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, flags, rc):

@@ -5,20 +5,21 @@ import json
 from random import randint
 
 class SevenOfNineTwitter:
+
     # Constructor
     # Define the twitters predefined constants
     def __init__(self):
-        print("SevenOfNineTwitter 1.0")
+        print("SevenOfNineTwitter 2.0")
         # Author keys file
-        self.authorkeys = "/home/pi/twitter_auth.json"
+        self.authorkeys = "/home/pi/twitter_auth_WeAreBorg7of9.json"
         # MagicMirror sentences file
-        self.mirrorsentences = "/home/pi/twitter_mirror.json"
+        self.mirrorsentences = "/home/pi/comment_mirror.json"
         # Generic sentences file
         self.genericsentences = "/home/pi/twitter_generic.json"
         # Predefined tags added before any twitter message
-        self.tags = "#artatronic #picasso #designchallenge #sevenofnine says:<<"
+        self.tags = "#artatronic #picasso #designchallenge "
         # Predefined mentions added after any twitter message
-        self.mentions = "@E14Community @element14_Avnet @e14presents @Elegoo_Official @LorenzoPMerlo1 @Hacksterio @Raspberry_Pi"
+        self.mentions = " @E14Community @e14presents @Elegoo_Official @LorenzoPMerlo1 @enricomiglno"
         # Default image name
         self.image = "/home/pi/images/twitter.jpg"
 
@@ -71,7 +72,7 @@ class SevenOfNineTwitter:
     def sendTweetImage(self, dictionary):
         num = dictionary['phrases']
         # Get the random phrase number
-        randRange = randint(0, num)
+        randRange = randint(0, num - 1)
 
         # Create the full text message
         tText = self.tags + dictionary['list'][randRange] + ">> " + self.mentions
@@ -82,7 +83,7 @@ class SevenOfNineTwitter:
     def sendTweet(self, dictionary):
         num = dictionary['phrases']
         # Get the random phrase number
-        randRange = randint(0, num)
+        randRange = randint(0, num - 1)
 
         # Create the full text message
         tText = self.tags + dictionary['list'][randRange] + ">> " + self.mentions
